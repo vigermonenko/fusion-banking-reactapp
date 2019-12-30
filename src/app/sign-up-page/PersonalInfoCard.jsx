@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
-import CenteredContainer from '../shared/CenteredContainer';
-import SignInForm from './SignInForm';
 import LogoCard from '../shared/LogoCard';
-import LinkedButton from '../shared/LinkedButton';
+import CenteredContainer from '../shared/CenteredContainer';
+import PersonalInfoForm from './PersonalInfoForm';
 
 const useStyles = makeStyles({
   card: {
@@ -16,24 +15,23 @@ const useStyles = makeStyles({
   },
 });
 
-function SignInCard({ onCreditsChange, onSubmit }) {
+function PersonalInfoCard({ onPersonalInfoChange }) {
   const classes = useStyles();
 
   return (
     <div>
-      <LogoCard title="Sign In" />
+      <LogoCard title="Personal Info" />
       <Card className={classes.card}>
         <CenteredContainer>
-          <SignInForm onCreditsChange={onCreditsChange} onSubmit={onSubmit} />
+          <PersonalInfoForm onPersonalInfoChange={onPersonalInfoChange} />
         </CenteredContainer>
       </Card>
     </div>
   );
 }
 
-SignInCard.propTypes = {
-  onCreditsChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+PersonalInfoCard.propTypes = {
+  onPersonalInfoChange: PropTypes.func.isRequired,
 };
 
-export default SignInCard;
+export default PersonalInfoCard;
