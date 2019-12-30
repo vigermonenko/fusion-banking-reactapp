@@ -6,6 +6,7 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import CenteredContainer from '../shared/CenteredContainer';
 import SignInForm from './SignInForm';
 import LogoCard from '../shared/LogoCard';
+import LinkedButton from '../shared/LinkedButton';
 
 const useStyles = makeStyles({
   card: {

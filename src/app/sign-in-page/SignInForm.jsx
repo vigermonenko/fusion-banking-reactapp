@@ -6,6 +6,8 @@ import Button from '@material-ui/core/Button';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
 import SpreadVerticalBox from '../shared/SpreadVerticalBox';
+import LinkedButton from '../shared/LinkedButton';
+import VerticalBox from '../shared/VerticalBox';
 
 const useStyles = makeStyles({
   form: {
@@ -39,13 +41,18 @@ function SignInForm({ onCreditsChange, onSubmit }) {
 
   return (
     <FormControl className={classes.form}>
-      <SpreadVerticalBox>
-        <TextField label="Login" onChange={onLoginChange} className={classes.text} />
-        <TextField label="Password" onChange={onPasswordChange} type="password" className={classes.text} />
-        <Button onClick={onSubmit} variant="contained" className={classes.button}>
-          Sign In
-        </Button>
-      </SpreadVerticalBox>
+      <VerticalBox>
+        <SpreadVerticalBox>
+          <TextField label="Login" onChange={onLoginChange} className={classes.text} />
+          <TextField label="Password" onChange={onPasswordChange} type="password" className={classes.text} />
+          <Button onClick={onSubmit} variant="contained" className={classes.button}>
+            Sign In
+          </Button>
+        </SpreadVerticalBox>
+        <LinkedButton link="/signup">
+          Sign Up
+        </LinkedButton>
+      </VerticalBox>
     </FormControl>
   );
 }
