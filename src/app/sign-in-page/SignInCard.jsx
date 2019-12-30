@@ -5,6 +5,7 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 
 import CenteredContainer from '../shared/CenteredContainer';
 import SignInForm from './SignInForm';
+import LogoCard from '../shared/LogoCard';
 
 const useStyles = makeStyles({
   card: {
@@ -18,11 +19,14 @@ function SignInCard({ onCreditsChange, onSubmit }) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
-      <CenteredContainer>
-        <SignInForm onCreditsChange={onCreditsChange} onSubmit={onSubmit} />
-      </CenteredContainer>
-    </Card>
+    <div>
+      <LogoCard title="Sign In" />
+      <Card className={classes.card}>
+        <CenteredContainer>
+          <SignInForm onCreditsChange={onCreditsChange} onSubmit={onSubmit} />
+        </CenteredContainer>
+      </Card>
+    </div>
   );
 }
 
